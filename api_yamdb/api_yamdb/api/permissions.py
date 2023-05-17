@@ -8,7 +8,7 @@ class IsAdminOrReadOnly(permissions.BasePermission):
                 and request.user.role == 'admin')
 
 
-class isOwner(permissions.BasePermission):
+class IsOwner(permissions.BasePermission):
     def has_permission(self, request, view):
         return request.user.is_authenticated
 
@@ -17,19 +17,19 @@ class isOwner(permissions.BasePermission):
                 or request.user == obj.author)
 
 
-class isModerator(permissions.BasePermission):
+class IsModerator(permissions.BasePermission):
     def has_permission(self, request, view):
         return (request.user.is_authenticated
                 and request.user.role == 'moderator')
 
 
-class isAdmin(permissions.BasePermission):
+class IsAdmin(permissions.BasePermission):
     def has_permission(self, request, view):
         return (request.user.is_authenticated
                 and request.user.role == 'admin')
 
 
-class isOwnerModeratorAdmin(permissions.BasePermission):
+class IsOwnerModeratorAdmin(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         return (request.user.is_authenticated
                 and (request.user == obj
@@ -51,7 +51,7 @@ class IsAnyRoleOrReadOnly(permissions.BasePermission):
                 or request.user.role == 'admin')
 
 
-class isOwnerAdmin(permissions.BasePermission):
+class IsOwnerAdmin(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         return (request.user.is_authenticated
                 and (request.user == obj
@@ -59,7 +59,7 @@ class isOwnerAdmin(permissions.BasePermission):
                      or request.user.role == 'admin'))
 
 
-class isModeratorAdmin(permissions.BasePermission):
+class IsModeratorAdmin(permissions.BasePermission):
     def has_permission(self, request, view):
         return (request.user.is_authenticated
                 and (request.user.role == 'moderator'

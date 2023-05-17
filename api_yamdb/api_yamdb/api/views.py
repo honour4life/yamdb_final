@@ -11,8 +11,8 @@ from rest_framework_simplejwt.tokens import AccessToken
 
 from api.filters import TitleFilter
 from api.mixins import CreateListDestroyViewSet
-from api.permissions import (IsAdminOrReadOnly, IsAnyRoleOrReadOnly, isAdmin,
-                             isOwner)
+from api.permissions import (IsAdminOrReadOnly, IsAnyRoleOrReadOnly, IsAdmin,
+                             IsOwner)
 from api.serializers import (AuthSerializer, CategorySerializer,
                              CommentSerializer, GenreSerializer,
                              ReviewSerializer, TitleSerializer,
@@ -103,8 +103,8 @@ class UserViewSet(viewsets.ModelViewSet):
             and (self.action == 'retrieve'
                  or self.action == 'partial_update'
                  or self.action == 'destroy')):
-            return (isOwner(),)
-        return (isAdmin(),)
+            return (IsOwner(),)
+        return (IsAdmin(),)
 
     def destroy(self, request, pk=None):
         if self.kwargs.get('pk') == 'me':
