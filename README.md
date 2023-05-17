@@ -1,3 +1,5 @@
+![GitHubActionS](https://github.com/honour4life/yamdb_final/actions/workflows/yamdb_workflow.yml./badge.svg)
+
 # api_yamdb
 API к платформе для оставления отзывов к произведениям, составления рейтингов и комментирования отзывов
 
