@@ -69,10 +69,10 @@ class Title(models.Model):
                             max_length=256)
     year = models.IntegerField(verbose_name='Год произведения',
                                validators=[
-                                MaxValueValidator(
-                                    dt.date.today().year,
-                                    'Максимальный год равен текущему году'
-                                )
+                                    MaxValueValidator(
+                                        dt.date.today().year,
+                                        'Максимальный год равен текущему году'
+                                    )
                                ])
     description = models.TextField(verbose_name='Описание', blank=True)
     category = models.ForeignKey(
