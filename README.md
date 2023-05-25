@@ -62,4 +62,5 @@ docker-compose exec web python manage.py csvfullfillment
 - [Марсель](https://github.com/honour4life)
 
 ## Ссылка на проект
-- http://158.160.69.93/
+- http://158.160.69.93/redoc/
+
